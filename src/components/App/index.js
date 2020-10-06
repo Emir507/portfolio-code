@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectsList from '../ProjectsList';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/index.css'
 
 function App() {
   return (
