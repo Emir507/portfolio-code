@@ -11,7 +11,7 @@ const useStyles = makeStyles(() => ({
     border: '1px solid black',
     borderRadius: '3px',
     overflow: 'hidden',
-    boxShadow: '0 0 4px black'
+    boxShadow: '0 0 4px blueviolet'
   }
 }))
 
