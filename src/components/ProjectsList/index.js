@@ -11,8 +11,8 @@ const useStyles = makeStyles(() => ({
     border: '1px solid black',
     borderRadius: '3px',
     overflow: 'hidden',
-    boxShadow: '0 0 4px blueviolet'
-  }
+    boxShadow: '0 0 4px blueviolet',
+  },
 }))
 
 const projectUrls = [
@@ -92,7 +92,7 @@ function Project({ project }) {
   const classes = useStyles();
   return (
     <Grid item xs={12} sm={6} md={4} lg={3}>
-      <div className={classes.gridItem}>
+      <div className={`${classes.gridItem} pb-2 p-lg-0`}>
         <h6 className='d-lg-none m-1'>{project.project_name}</h6>
         <div className={`position-relative ${styles.project_info} mb-2 m-lg-0`}>
           <img src={project.project_img} alt={`${project.project_name}_pic`} />
