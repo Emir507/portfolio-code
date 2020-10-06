@@ -60,8 +60,6 @@ function ProjectsList() {
           list-style: none;
           margin: 0;
           padding: 0;
-          display: grid;
-          grid-template-columns: 1fr 1fr; 
         }
         img {
           width: 100%;
@@ -69,13 +67,13 @@ function ProjectsList() {
           display: block;
         }
       `}</style>
-      <ul>
+      <ul className="d-flex flex-wrap">
         {projects.map(project => (
-          <li key={project.id} className="d-flex col-6 flex-column">
+          <li key={project.id} className="d-flex col-12 col-sm-6 col-md-4 col-lg-3 flex-column">
             <div>
               <img src={project.project_img} alt={`${project.project_name}_pic`} />
             </div>
-            <h1>{project.project_name}</h1>
+            <h6>{project.project_name}</h6>
           </li>
         ))}
       </ul>
