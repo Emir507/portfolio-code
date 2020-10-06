@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './styles/projects.module.css';
+import { Grid } from '@material-ui/core';
 
 const projectUrls = [
   {
@@ -57,26 +58,26 @@ function ProjectsList() {
 
   return (
     <div>
-      <ul className={`${styles.ul} d-flex flex-wrap`}>
+      <Grid container spacing={1}>
         {projects.map(project => (
           <Project key={project.id} project={project} />
         ))}
-      </ul>
+      </Grid>
     </div>
   )
 }
 
 function Project({ project }) {
   return (
-    <li className="d-flex col-12 col-sm-6 col-md-4 col-lg-3 flex-column">
-      <div className='position-relative'>
+    <Grid item xs={12} sm={6} md={4} lg={3}>
+      <div className={`position-relative ${styles.project_info}`}>
         <img src={project.project_img} alt={`${project.project_name}_pic`} />
         <div className={`${styles.project_name} d-flex justify-content-center align-items-center`}>
           <p>{project.project_name}</p>
         </div>
       </div>
       <p className='d-lg-none'>{project.project_name}</p>
-    </li>
+    </Grid>
   )
 }
 

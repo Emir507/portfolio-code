@@ -1,8 +1,3 @@
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 img {
   height: 100%;
   width: 100%;
@@ -22,6 +17,6 @@ img {
   cursor: pointer;
 }
 
-li > div:hover .project_name {
+.project_info:hover .project_name {
   opacity: 1;
 }
