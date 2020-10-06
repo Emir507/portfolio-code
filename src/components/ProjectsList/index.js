@@ -4,7 +4,7 @@ import styles from './styles/projects.module.css';
 const projectUrls = [
   {
     id: 1,
-    project_name: 'to-do list',
+    project_name: 'To-do лист',
     project_url: 'https://emir507.github.io/to-do',
     project_img: '/images/todo-list.png'
   },
@@ -22,7 +22,7 @@ const projectUrls = [
   },
   {
     id: 4,
-    project_name: 'Проект из курсов',
+    project_name: 'Коворкинг',
     project_url: 'https://emir507.github.io/week-2/',
     project_img: '/images/coworking.png'
   },
@@ -67,12 +67,8 @@ function ProjectsList() {
 }
 
 function Project({ project }) {
-  const [ isMouseOver, setIsMouseOver ] = useState(false);
   return (
-    <li 
-      className="d-flex col-12 col-sm-6 col-md-4 col-lg-3 flex-column" 
-      onMouseEnter={() => setIsMouseOver(true)}
-      onMouseLeave={() => setIsMouseOver(false)} >
+    <li className="d-flex col-12 col-sm-6 col-md-4 col-lg-3 flex-column">
       <div className='position-relative'>
         <img src={project.project_img} alt={`${project.project_name}_pic`} />
         <div className={`${styles.project_name} d-flex justify-content-center align-items-center`}>
