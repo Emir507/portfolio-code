@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './styles/projects.module.css';
 import { Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const projectUrls = [
   {
@@ -35,7 +36,8 @@ const projectUrls = [
     id: 5,
     project_name: 'База данных кино',
     project_url: 'https://movies-database.vercel.app',
-    project_img: 'https://github.com/Emir507/movies-database'
+    project_img: '/images/movies.png',
+    project_code: 'https://github.com/Emir507/movies-database'
   },
   {
     id: 6,
@@ -79,8 +81,12 @@ function Project({ project }) {
     <Grid item xs={12} sm={6} md={4} lg={3}>
       <div className={`position-relative ${styles.project_info}`}>
         <img src={project.project_img} alt={`${project.project_name}_pic`} />
-        <div className={`${styles.project_name} d-none d-lg-flex justify-content-center align-items-center`}>
+        <div className={`${styles.project_name} d-none d-lg-flex flex-column justify-content-center align-items-center`}>
           <p>{project.project_name}</p>
+          <div>
+            <button className='btn btn-primary'>DEMO</button>
+            <button className='btn btn-warning'>Review</button>
+          </div>
         </div>
       </div>
       <p className='d-lg-none'>{project.project_name}</p>
