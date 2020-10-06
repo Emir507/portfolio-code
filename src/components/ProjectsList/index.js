@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './styles/projects.module.css';
 
 const projectUrls = [
   {
@@ -52,32 +53,34 @@ const projectUrls = [
 ]
 
 function ProjectsList() {
-  const [projects, ] = useState(projectUrls)
+  const [projects, ] = useState(projectUrls);
+
   return (
     <div>
-      <style jsx>{`
-        ul {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-        img {
-          width: 100%;
-          heigth: 100%;
-          display: block;
-        }
-      `}</style>
-      <ul className="d-flex flex-wrap">
+      <ul className={`${styles.ul} d-flex flex-wrap`}>
         {projects.map(project => (
-          <li key={project.id} className="d-flex col-12 col-sm-6 col-md-4 col-lg-3 flex-column">
-            <div>
-              <img src={project.project_img} alt={`${project.project_name}_pic`} />
-            </div>
-            <h6>{project.project_name}</h6>
-          </li>
+          <Project key={project.id} project={project} />
         ))}
       </ul>
     </div>
+  )
+}
+
+function Project({ project }) {
+  const [ isMouseOver, setIsMouseOver ] = useState(false);
+  return (
+    <li 
+      className="d-flex col-12 col-sm-6 col-md-4 col-lg-3 flex-column" 
+      onMouseEnter={() => setIsMouseOver(true)}
+      onMouseLeave={() => setIsMouseOver(false)} >
+      <div className='position-relative'>
+        <img src={project.project_img} alt={`${project.project_name}_pic`} />
+        <div className={`${styles.project_name} d-flex justify-content-center align-items-center`}>
+          <p>{project.project_name}</p>
+        </div>
+      </div>
+      <p className='d-lg-none'>{project.project_name}</p>
+    </li>
   )
 }
 
