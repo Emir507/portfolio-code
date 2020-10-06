@@ -84,8 +84,8 @@ function Project({ project }) {
         <div className={`${styles.project_name} d-none d-lg-flex flex-column justify-content-center align-items-center`}>
           <p>{project.project_name}</p>
           <div>
-            <button className='btn btn-primary'>DEMO</button>
-            <button className='btn btn-warning'>Review</button>
+            <Link to={`${project.project_url}`} className='btn btn-primary'>DEMO</Link>
+            <Link to={`${project.project_code}`} className='btn btn-warning'>Review</Link>
           </div>
         </div>
       </div>
